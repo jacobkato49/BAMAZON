@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 
 
 INSERT INTO `products` (`itemID`, `ProductName`, `DepartmentName`, `Price`, `StockQuantity`) VALUES
-	(1, 'Clarinet', 'Instruments', 999.99, 10),
+	(1, '42K Gold Platted Clarinet', 'Instruments', 999.99, 10),
 	(2, 'Microwave', 'Household', 20.00, 111),
 	(3, 'Apple Watch', 'Attire', 100.00, 120),
 	(4, 'Jordan 1', 'Attire', 39.99, 15),
