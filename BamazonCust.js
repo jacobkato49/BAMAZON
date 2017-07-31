@@ -20,7 +20,7 @@ function selection(){
     if (err) throw (err);
 
     //new TABLE
-    var table = new Table({
+    var table = new table({
       head: ["Product ID".blue, "Product Name".blue, "Department Name".blue, "Price".trap, "Quantity".underline.red],
       //input col-width
       colWidth:[13,20,20,10,10],
@@ -104,7 +104,7 @@ function selection(){
           //Again,might be a hoisting issue
           orderMore();
         }
-        
+
       });
 
 
@@ -114,3 +114,31 @@ function selection(){
   });
 
 }
+
+
+//orderMore
+function orderMore(){
+  inquirer.prompt([
+    {
+      type: "confirm",
+      message: "Anymore orders??",
+      name: "purchaseMore"
+    },
+
+  ]).then(function(user){
+    if(user.purchaseMore){
+      selection();
+    }
+    exit();
+  })
+
+}
+
+//exit
+function exit() {
+  connection.end();
+  console.log("Have a great day and thank you for ordering from BAMAZON!")
+}
+
+//call selection
+selection();
