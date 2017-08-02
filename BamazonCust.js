@@ -8,11 +8,16 @@ const  table = require("cli-table");
 var keys = require("./keys.js");
 
 var connection = mysql.createConnection(keys.connection); /**Documentation npm mysql**/
+console.log("Listening on: " + keys.connection.port);
+
 
 //check my connection
 connection.connect(function(err){
+  //if I am not connected throw me an error
   if(err) throw err;
 });
+
+
 
 function selection(){
   connection.query("SELECT * FROM products", function(err,res){
